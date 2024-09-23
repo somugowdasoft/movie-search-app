@@ -26,7 +26,10 @@ const MovieDetail = ({ favourite, addToFavourite }) => {
         MovieDetail()
     }, [id]);
 
-    const isFavourite = favourite.some(fav => fav.imdbID === movie.imdbID);
+    if (favourite && movie) {
+        var isFavourite = favourite.some(fav => fav.imdbID === movie.imdbID);
+    }
+
 
     // condition if data loading
     if (!movie)
